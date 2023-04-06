@@ -33,7 +33,7 @@ jobs:
       #     publish_dir: dist
       #     cname: bm.taskratchet.com
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@1.0.8
+        uses: actions/upload-pages-artifact@v1
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: "dist"
@@ -48,6 +48,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@2.0.0
+        uses: actions/deploy-pages@v2
         with:
           artifact_name: ${{ env.ARTIFACT_NAME }}
