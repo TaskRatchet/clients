@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           name: ${{ env.ARTIFACT_NAME }}
-          path: "dist"
+          path: "apps/bm/dist"
   deploy:
     runs-on: ubuntu-latest
     needs: build
