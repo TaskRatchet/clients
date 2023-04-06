@@ -6,7 +6,6 @@ on:
 env:
   NODE_VERSION: 16.15.0
   ARTIFACT_NAME: "bm-dist-gh-pages"
-  DEPLOY_TARGET: "bm-github-pages"
 defaults:
   run:
     working-directory: apps/bm
@@ -45,7 +44,7 @@ jobs:
       pages: write # to deploy to Pages
       id-token: write # to verify the deployment originates from an appropriate source
     environment:
-      name: ${{ env.DEPLOY_TARGET }}
+      name: bm-github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
