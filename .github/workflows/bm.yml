@@ -5,6 +5,9 @@ on:
       - main
 env:
   NODE_VERSION: 16.15.0
+defaults:
+  run:
+    working-directory: apps/bm
 jobs:
   deploy:
     runs-on: ubuntu-latest
