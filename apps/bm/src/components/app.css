@@ -1,0 +1,116 @@
+body {
+  font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+
+  --red: rgb(255, 181, 181);
+  --orange: rgb(255, 224, 161);
+  --blue: rgb(199, 199, 255);
+  --green: rgb(147, 255, 147);
+
+  --padding: 0.4rem;
+}
+
+.red {
+  background: var(--red);
+}
+
+.orange {
+  background: var(--orange);
+}
+
+.blue {
+  background: var(--blue);
+}
+
+.green {
+  background: var(--green);
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  padding: 0 1px 0 0;
+  text-decoration: none;
+}
+
+.icon-button.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.login {
+  display: block;
+  padding: 2rem;
+}
+
+.global-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--padding);
+  flex-wrap: wrap;
+}
+
+.global-controls>* {
+  margin-top: var(--padding);
+}
+
+.global-controls .buttons {
+  flex: 0 0 auto;
+}
+
+.global-controls .buttons .icon-button {
+  margin-left: var(--padding);
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  font-size: 0.6rem;
+}
+
+.filter input {
+  margin-right: 0.4rem;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.tags {
+  padding-left: var(--padding);
+}
+
+.tags li {
+  display: inline-block;
+  margin-right: 0.4rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table,
+table td,
+table th {
+  border: 1px solid #ccc;
+  padding: 0.4rem;
+}
