@@ -7,7 +7,6 @@ export default defineConfig({
     nav: [
       { text: "FAQ", link: "/help/faq" },
       { text: "Help", link: "/help" },
-      { text: "Twitter", link: "https://twitter.com/TaskRatchet" },
       { text: "Privacy", link: "/privacy" },
       { text: "Terms", link: "/terms" },
       { text: "Log In", link: "https://app.taskratchet.com/" },
