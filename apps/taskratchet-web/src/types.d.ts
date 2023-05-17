@@ -27,6 +27,7 @@ type User = {
 			goal_new_tasks: string;
 		};
 	};
+	has_stripe_customer: boolean;
 };
 
 type TaskType = {
