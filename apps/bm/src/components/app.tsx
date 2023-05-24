@@ -28,16 +28,14 @@ function _App() {
   });
 
   return (
-    <>
+    <div class='app__base'>
       <div>
         <Header search={filter} setSearch={setFilter} />
         <Tags onChange={(t) => setTag(t)} />
-        <div class="content">
-          <Goals goals={filtered} />
-        </div>
       </div>
+      <div class='app__content'><Goals goals={filtered} /></div>
       <Footer />
-    </>
+    </div>
   );
 }
 
