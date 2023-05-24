@@ -33,7 +33,7 @@
     "vite": "^4.1.0",
     "vite-bundle-visualizer": "^0.6.0",
     "vite-plugin-pwa": "^0.14.2",
-    "vitest": "^0.29.8",
-    "vitest-dom": "^0.0.4"
+    "vitest": "^0.31.0",
+    "vitest-dom": "^0.1.0"
   }
 }
