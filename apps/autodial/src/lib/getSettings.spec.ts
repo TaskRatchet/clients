@@ -11,4 +11,14 @@ describe("getSettings", () => {
 
     expect(settings.from).toBe("from_slug");
   });
+
+  it("is case insensitive", () => {
+    const settings = getSettings(
+      makeGoal({
+        fineprint: "#autodialfrom=from_slug",
+      })
+    );
+
+    expect(settings.from).toBe("from_slug");
+  });
 });
