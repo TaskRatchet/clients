@@ -31,14 +31,18 @@ function parseHashtag(
   return matches?.[1];
 }
 
+function parseBoolean(haystack: string, hashtag: string): boolean {
+  return haystack.toLowerCase().includes(`#${hashtag}`.toLowerCase());
+}
+
 export function getSettings(g: Goal): AutodialSettings {
   const t = `${g.fineprint} ${g.title}`;
 
   return {
-    autodial: t.includes("#autodial"),
+    autodial: parseBoolean(t, "autodial"),
     min: parseOptionFloat(t, "autodialMin", -Infinity),
     max: parseOptionFloat(t, "autodialMax", Infinity),
-    strict: t.includes("#autodialStrict"),
+    strict: parseBoolean(t, "autodialStrict"),
     add: parseOptionFloat(t, "autodialAdd", 0),
     times: parseOptionFloat(t, "autodialTimes", 1),
     from: parseHashtag(t, "autodialFrom", "(-?[\\w-]+)"),

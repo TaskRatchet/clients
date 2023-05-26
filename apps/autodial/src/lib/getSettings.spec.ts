@@ -21,4 +21,24 @@ describe("getSettings", () => {
 
     expect(settings.from).toBe("from_slug");
   });
+
+  it('parses strict option case-insensitively', () => {
+    const settings = getSettings(
+      makeGoal({
+        fineprint: "#autoDialstrict",
+      })
+    );
+
+    expect(settings.strict).toBe(true);
+  })
+
+  it('parses `#autodial` case-insenstiively', () => {
+    const settings = getSettings(
+      makeGoal({
+        fineprint: "#autoDial",
+      })
+    );
+
+    expect(settings.autodial).toBe(true);
+  })
 });
