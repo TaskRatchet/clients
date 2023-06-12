@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import React from "react";
 import { waitFor, screen } from "@testing-library/react";
 import App from "./App";
@@ -223,23 +219,23 @@ describe("Home page", () => {
   });
 
   it("displays min value", async () => {
+    setNow(2009, 3, 1);
+
     loadGoals([{ slug: "the_slug", rate: 3, fineprint: "#autodialMin=1.5" }]);
 
-    const { getByText } = await r(<App />);
+    r(<App />);
 
-    await waitFor(() => {
-      expect(getByText("1.5/d")).toBeInTheDocument();
-    });
+    expect(await screen.findByText("1.5/d")).toBeInTheDocument();
   });
 
   it("displays positive value", async () => {
-    loadGoals([{ slug: "the_slug", rate: 3, fineprint: "#autodialMax=1" }]);
+    setNow(2009, 3, 1);
 
-    const { getByText } = await r(<App />);
+    loadGoals([{ slug: "the_slug", rate: 3, fineprint: "#autodialMax=5" }]);
 
-    await waitFor(() => {
-      expect(getByText("1/d")).toBeInTheDocument();
-    });
+    r(<App />);
+
+    expect(await screen.findByText("5/d")).toBeInTheDocument();
   });
 
   it("removes login button when data loads successfully", async () => {
