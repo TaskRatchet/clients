@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { AppContext } from "@/App";
+import { AppContext } from "~/App";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Button from "@mui/material/Button";
-import { authenticate, getBoards, getCards } from "@services/trello";
-import { useMe } from "@services/firebase/firestore";
+import { authenticate, getBoards, getCards } from "~services/trello";
+import { useMe } from "~services/firebase/firestore";
 import { useQuery } from "@tanstack/react-query";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";

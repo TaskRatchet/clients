@@ -1,7 +1,7 @@
 import CssBaseline from "@mui/material/CssBaseline";
 import Container from "@mui/material/Container";
-import Flow from "@components/Flow";
-import AuthControls from "@components/AuthControls";
+import Flow from "~components/Flow";
+import AuthControls from "~components/AuthControls";
 import { Action, initialState, reducer, State } from "./App.reducer";
 import React, { createContext, Dispatch, useReducer } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -9,7 +9,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Settings from "@components/Settings";
+import Settings from "~components/Settings";
 
 const queryClient = new QueryClient();
 

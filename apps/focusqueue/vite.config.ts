@@ -6,7 +6,7 @@ import { ViteAliases } from "vite-aliases";
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   return {
-    plugins: [react(), ViteAliases({ useConfig: true, useTypescript: true })],
+    plugins: [react(), ViteAliases({ useConfig: true })],
     test: {
       setupFiles: "vitest.setup.ts",
       environment: "jsdom",
