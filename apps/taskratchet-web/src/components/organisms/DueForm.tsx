@@ -48,20 +48,24 @@ export default function DueForm(props: DueFormProps): JSX.Element {
 
 					onChange({ due: formatDue(d) });
 				}}
-				OpenPickerButtonProps={{
-					'aria-label': 'change date',
+				slots={{
+					textField: (params) => (
+						<TextField
+							required
+							InputLabelProps={{
+								'aria-label': 'due date',
+							}}
+							variant="standard"
+							{...params}
+						/>
+					),
+				}}
+				slotProps={{
+					openPickerButton: {
+						'aria-label': 'change date',
+					},
 				}}
 				disablePast
-				renderInput={(params) => (
-					<TextField
-						required
-						InputLabelProps={{
-							'aria-label': 'due date',
-						}}
-						variant="standard"
-						{...params}
-					/>
-				)}
 				maxDate={maxDue}
 				minDate={minDue}
 			/>
@@ -84,12 +88,16 @@ export default function DueForm(props: DueFormProps): JSX.Element {
 						);
 					onChange({ due: formatDue(d) });
 				}}
-				OpenPickerButtonProps={{
-					'aria-label': 'change time',
+				slots={{
+					textField: (params) => (
+						<TextField required variant="standard" {...params} />
+					),
 				}}
-				renderInput={(params) => (
-					<TextField required variant="standard" {...params} />
-				)}
+				slotProps={{
+					openPickerButton: {
+						'aria-label': 'change time',
+					},
+				}}
 			/>
 		</LocalizationProvider>
 	);

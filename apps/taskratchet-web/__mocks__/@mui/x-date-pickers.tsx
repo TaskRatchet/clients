@@ -9,7 +9,7 @@ function makePicker({
 }) {
 	return function MockPicker(p: any) {
 		const [value, setValue] = React.useState(formatValue(p.value));
-		return p.renderInput({
+		return p.slots.textField({
 			label: p.label,
 			value,
 			onChange: (e: any) => {

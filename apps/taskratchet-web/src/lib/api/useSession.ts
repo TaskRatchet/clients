@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import logEvent from '../logEvent';
-import { EventCategory, EventAction } from '../logEvent';
 import { getAuth, signOut } from 'firebase/auth';
 
 // TODO: Add proper type
@@ -33,11 +31,6 @@ export function publishSession(): void {
 
 // TODO: Should this function be in separate file?
 export function logout(): void {
-	logEvent({
-		category: EventCategory.Authentication,
-		action: EventAction.Logout,
-	});
-
 	window.localStorage.removeItem('email');
 	window.localStorage.removeItem('token');
 	window.localStorage.removeItem('firebase_token');

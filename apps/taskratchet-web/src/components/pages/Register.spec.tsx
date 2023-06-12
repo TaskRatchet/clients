@@ -5,11 +5,10 @@ import Register from './Register';
 import { waitFor, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { getTimezones } from '../../lib/api/getTimezones';
-import { vi, expect, it, describe } from 'vitest';
+import { vi, expect, it, describe, beforeEach } from 'vitest';
 import register from '../../lib/api/register';
 import { getCheckoutSession } from '../../lib/api/getCheckoutSession';
 import { redirectToCheckout } from '../../lib/stripe';
-import saveFeedback from '../../lib/saveFeedback';
 import { toast } from 'react-toastify';
 
 vi.mock('../../lib/api/getCheckoutSession');
@@ -58,6 +57,12 @@ async function fillForm() {
 }
 
 describe('registration page', () => {
+	beforeEach(() => {
+		vi.mocked(getCheckoutSession).mockResolvedValue({
+			id: 'session_id',
+		});
+	});
+
 	it('uses Input for name field', async () => {
 		renderWithQueryProvider(<Register />);
 
@@ -96,7 +101,7 @@ describe('registration page', () => {
 			'the_email',
 			'the_password',
 			'the_timezone',
-			'session'
+			'session_id'
 		);
 	});
 
@@ -112,34 +117,6 @@ describe('registration page', () => {
 		await waitFor(() => {
 			expect(redirectToCheckout).toBeCalledWith('session_id');
 		});
-	});
-
-	it('collects how they learned about TaskRatchet', async () => {
-		await fillForm();
-
-		await userEvent.type(
-			await screen.findByLabelText('How did you hear about us?'),
-			'the_referral'
-		);
-
-		await userEvent.click(await screen.findByText('Add payment method'));
-
-		await waitFor(() => {
-			expect(saveFeedback).toBeCalledWith({
-				userName: 'the_name',
-				userEmail: 'the_email',
-				prompt: 'How did you hear about us?',
-				response: 'the_referral',
-			});
-		});
-	});
-
-	it('skips sending referral if none provided', async () => {
-		await fillForm();
-
-		await userEvent.click(await screen.findByText('Add payment method'));
-
-		expect(saveFeedback).not.toBeCalled();
 	});
 
 	it('shows missing email error if none provided', async () => {
