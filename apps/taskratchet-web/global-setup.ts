@@ -43,7 +43,7 @@ function deleteAllCookies() {
 	}
 }
 
-const fetchMock = createFetchMock(vi);
+const fetchMock = createFetchMock(vi as any);
 fetchMock.enableMocks();
 
 window.FreshworksWidget = vi.fn() as any;
@@ -52,6 +52,7 @@ beforeEach(() => {
 	fetchMock.resetMocks();
 	deleteAllCookies();
 	window.localStorage.clear();
+
 	vi.mocked(getCheckoutSession).mockResolvedValue({
 		id: 'session',
 	});

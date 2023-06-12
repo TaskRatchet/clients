@@ -1,7 +1,5 @@
 import { publishSession } from './useSession';
 import fetch1 from './fetch1';
-import logEvent from '../logEvent';
-import { EventCategory, EventAction } from '../logEvent';
 import { signInWithEmailAndPassword, getAuth } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 
@@ -37,11 +35,6 @@ export async function login(email: string, password: string): Promise<boolean> {
 	window.localStorage.setItem('firebase_token', await cred.user.getIdToken());
 
 	publishSession();
-
-	logEvent({
-		category: EventCategory.Authentication,
-		action: EventAction.Login,
-	});
 
 	return true;
 }

@@ -18,6 +18,9 @@
         "displayName": "functions",
         "preset": "ts-jest",
         "testEnvironment": "node",
+        "testEnvironmentOptions": {
+          "url": "http://localhost/"
+        },
         "resetMocks": true,
         "roots": [
           "<rootDir>"

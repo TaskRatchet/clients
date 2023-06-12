@@ -7,7 +7,7 @@ import {
   loginWithGoogle,
   logout,
   useAuthenticatedUser,
-} from "@services/firebase/auth";
+} from "~services/firebase/auth";
 import React from "react";
 
 vi.mock("./lib/speak");

@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen, act, waitFor } from "@testing-library/react";
 import Countdown from "./Countdown";
 import userEvent from "@testing-library/user-event";
-import speak from "@lib/speak";
+import speak from "~lib/speak";
 import React from "react";
 import { __advance, __complete, __reset } from "@bradgarropy/use-countdown";
 

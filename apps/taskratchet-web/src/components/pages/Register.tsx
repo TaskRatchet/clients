@@ -10,7 +10,6 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import saveFeedback from '../../lib/saveFeedback';
 import useDocumentTitle from '../../lib/useDocumentTitle';
 import FormHelperText from '@mui/material/FormHelperText';
 import Checkbox from '@mui/material/Checkbox';
@@ -40,12 +39,7 @@ const Register = (): JSX.Element => {
 		if (!passes || !checkoutSession) return;
 
 		if (referral) {
-			saveFeedback({
-				userName: name,
-				userEmail: email,
-				prompt: 'How did you hear about us?',
-				response: referral,
-			});
+			// TODO: Log referral
 		}
 
 		const response = await register(

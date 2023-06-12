@@ -56,6 +56,7 @@ export default function GoalRow({ goal, username }: Props): JSX.Element {
       setPendingRate(newRate === null ? false : newRate);
       setArpn(arpn);
     } catch (e: unknown) {
+      console.error(e);
       if (e instanceof Error) {
         setError(e.message);
       } else {

@@ -1,6 +1,4 @@
-import logEvent from '../logEvent';
 import fetch1 from './fetch1';
-import { EventCategory, EventAction } from '../logEvent';
 
 type Input = {
 	task: string;
@@ -15,12 +13,6 @@ export async function addTask(input: Input): Promise<Response> {
 	if (!response.ok) {
 		throw new Error('Failed to add task');
 	}
-
-	logEvent({
-		category: EventCategory.Task,
-		action: EventAction.TaskCreate,
-		value: input.cents / 100,
-	});
 
 	return response;
 }

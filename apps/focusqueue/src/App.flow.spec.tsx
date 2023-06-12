@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
-import { useAuthenticatedUser } from "@services/firebase/auth";
+import { useAuthenticatedUser } from "~services/firebase/auth";
 import React from "react";
 
 // TODO: Consider making this Flow.spec since describe has Flow

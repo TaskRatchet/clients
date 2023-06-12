@@ -1,11 +1,11 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import Dump from "./Dump";
-import { State } from "@/App.reducer";
+import { State } from "~/App.reducer";
 import userEvent from "@testing-library/user-event";
-import { authenticate, getBoards } from "@services/trello";
-import { updateMe } from "@services/firebase/firestore";
-import { useMe } from "@services/firebase/firestore";
+import { authenticate, getBoards } from "~services/trello";
+import { updateMe } from "~services/firebase/firestore";
+import { useMe } from "~services/firebase/firestore";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import getEnvValue from "@lib/getEnvValue";
+import getEnvValue from "~lib/getEnvValue";
 import { getFirestore } from "firebase/firestore";
 
 const e = (k: string) => getEnvValue<string>(k);
