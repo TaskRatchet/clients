@@ -22,7 +22,8 @@ defineProps<{
                         TaskRatchet <a href="https://blog.beeminder.com/taskratchet/">in 2020</a> to make it easier to
                         make
                         monetary commitments on one-off tasks. Since then he's been making <a
-                            href="https://twitter.com/TaskRatchet">steady progress</a> on turning TaskRatchet into the
+                            href="https://forum.beeminder.com/t/taskratchet-development-updates/5037">steady progress</a> on
+                        turning TaskRatchet into the
                         ultimate todo list with consequences.
                     </p>
                 </div>
