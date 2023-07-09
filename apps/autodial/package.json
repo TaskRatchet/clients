@@ -87,7 +87,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.23.4",
     "firebase-functions-test": "^0.3.0",
-    "jest": "^26.5.5",
     "jest-environment-jsdom": "^26.5.5",
     "netlify-cli": "^10.6.0",
     "prettier": "2.7.1",
