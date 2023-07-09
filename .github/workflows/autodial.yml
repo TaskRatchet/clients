@@ -1,0 +1,67 @@
+name: Autodialer
+on:
+  push:
+env:
+  NODE_VERSION: 16.15.1
+defaults:
+  run:
+    working-directory: ./apps/autodial
+jobs:
+  test-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run tests
+        run: pnpm test
+  test-functions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+      - name: Install root dependencies
+        run: pnpm install
+      - name: Install function dependencies
+        run: pnpm install
+        working-directory: ./apps/autodial/functions
+      - name: Run tests
+        run: pnpm test
+        working-directory: ./apps/autodial/functions
+  deploy-functions:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+      - name: Install root dependencies
+        run: pnpm install
+      - name: Install function dependencies
+        run: pnpm install
+        working-directory: ./apps/autodial/functions
+      - name: Install Firebase
+        run: curl -sL https://firebase.tools | bash
+      - name: Deploy to Firebase
+        run: firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}"

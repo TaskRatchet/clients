@@ -76,6 +76,7 @@ describe("Home page", () => {
     mockUpdate.mockResolvedValue(null);
     loadGoals([{ slug: "the_slug" }]);
     loadParams("?access_token=abc123&username=the_user");
+    setNow(2009, 3, 1);
   });
 
   it("has authenticate button", async () => {
@@ -233,13 +234,11 @@ describe("Home page", () => {
   });
 
   it("displays positive value", async () => {
-    loadGoals([{ slug: "the_slug", rate: 3, fineprint: "#autodialMax=1" }]);
+    loadGoals([{ slug: "the_slug", rate: 3, fineprint: "#autodialMax=5" }]);
 
-    const { getByText } = await r(<App />);
+    r(<App />);
 
-    await waitFor(() => {
-      expect(getByText("1/d")).toBeInTheDocument();
-    });
+    expect(await screen.findByText("5/d")).toBeInTheDocument();
   });
 
   it("removes login button when data loads successfully", async () => {
