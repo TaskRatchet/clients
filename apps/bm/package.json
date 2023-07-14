@@ -17,11 +17,14 @@
     "@tanstack/query-sync-storage-persister": "^4.24.4",
     "@tanstack/react-query": "^4.24.4",
     "@tanstack/react-query-persist-client": "^4.24.4",
+    "isomorphic-dompurify": "^1.8.0",
+    "marked": "^5.1.1",
     "preact": "^10.11.3"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
     "@testing-library/preact": "^3.2.3",
+    "@types/marked": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.50.0",
     "eslint": "^8.33.0",
