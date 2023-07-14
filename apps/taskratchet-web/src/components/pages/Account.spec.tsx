@@ -7,7 +7,7 @@ import { loadTimezones } from '../../lib/test/loadTimezones';
 import userEvent from '@testing-library/user-event';
 import { useGetApiToken } from '../../lib/api/useGetApiToken';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { getCheckoutSession } from '../../lib/api/getCheckoutSession';
+import { getCheckoutSession } from 'taskratchet-sdk';
 
 vi.mock('../../lib/api/getTimezones');
 vi.mock('../../lib/api/getMe');

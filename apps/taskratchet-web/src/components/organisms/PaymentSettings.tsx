@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import { useMe } from '../../lib/api/useMe';
 import { redirectToCheckout } from '../../lib/stripe';
-import { getCheckoutSession } from '../../lib/api/getCheckoutSession';
 import { LoadingButton } from '@mui/lab';
-import { updateMe } from '../../lib/api/updateMe';
+import { getCheckoutSession, updateMe } from 'taskratchet-sdk';
 
 export default function PaymentSettings(): JSX.Element {
 	const me = useMe();

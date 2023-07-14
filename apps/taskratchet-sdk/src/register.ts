@@ -1,6 +1,6 @@
 import fetch1 from "./fetch1";
 
-export default async function register(
+export async function register(
   name: string,
   email: string,
   password: string,

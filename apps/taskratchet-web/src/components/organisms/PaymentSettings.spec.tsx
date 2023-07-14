@@ -7,8 +7,7 @@ import React from 'react';
 import { loadMe } from '../../lib/test/loadMe';
 import { redirectToCheckout } from '../../lib/stripe';
 import loadControlledPromise from '../../lib/test/loadControlledPromise';
-import { getCheckoutSession } from '../../lib/api/getCheckoutSession';
-import { updateMe } from '../../lib/api/updateMe';
+import { getCheckoutSession, updateMe } from 'taskratchet-sdk';
 
 vi.mock('../../lib/api/getMe');
 vi.mock('../../lib/api/updateMe');

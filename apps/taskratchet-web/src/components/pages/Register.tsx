@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 import { useCheckoutSession } from '../../lib/api/useCheckoutSession';
 import { useTimezones } from '../../lib/api/useTimezones';
 import { Box, Button, Link, Stack } from '@mui/material';
-import register from '../../lib/api/register';
 import { redirectToCheckout } from '../../lib/stripe';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -15,6 +14,7 @@ import useDocumentTitle from '../../lib/useDocumentTitle';
 import FormHelperText from '@mui/material/FormHelperText';
 import Checkbox from '@mui/material/Checkbox';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { register } from 'taskratchet-sdk';
 
 const Register = (): JSX.Element => {
 	const [name, setName] = useState<string>('');

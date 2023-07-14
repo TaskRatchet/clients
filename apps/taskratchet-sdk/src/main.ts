@@ -5,6 +5,7 @@ export * from "./getCheckoutSession";
 export * from "./getMe";
 export * from "./getTasks";
 export * from "./getTimezones";
+export * from "./login";
 export * from "./register";
 export * from "./requestResetEmail";
 export * from "./resetPassword";

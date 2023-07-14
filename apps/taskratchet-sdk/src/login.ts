@@ -1,6 +1,6 @@
 import { publishSession } from "./sessions";
 import fetch1 from "./fetch1";
-import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
+import { signInWithEmailAndPassword, getAuth, Auth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -13,9 +13,16 @@ const firebaseConfig = {
   appId: __FIREBASE_APP_ID__,
 };
 
-const app = initializeApp(firebaseConfig);
+let _auth: Auth;
 
-const auth = getAuth(app);
+function _getAuth() {
+  if (!_auth) {
+    const app = initializeApp(firebaseConfig);
+    _auth = getAuth(app);
+  }
+
+  return _auth;
+}
 
 export async function login(email: string, password: string): Promise<boolean> {
   const res = await fetch1("account/login", false, "POST", {
@@ -30,7 +37,7 @@ export async function login(email: string, password: string): Promise<boolean> {
   window.localStorage.setItem("token", token);
   window.localStorage.setItem("email", email);
 
-  const cred = await signInWithEmailAndPassword(auth, email, password);
+  const cred = await signInWithEmailAndPassword(_getAuth(), email, password);
 
   window.localStorage.setItem("firebase_token", await cred.user.getIdToken());
 
