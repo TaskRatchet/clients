@@ -1,5 +1,6 @@
-import { logout, useSession } from './useSession';
+import { useSession } from './useSession';
 import { act, renderHook } from '@testing-library/react';
+import { logout } from 'taskratchet-sdk';
 import { expect, it, describe } from 'vitest';
 
 describe('useSession', () => {

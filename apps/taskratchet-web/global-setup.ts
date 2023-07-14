@@ -4,9 +4,9 @@ import matchers, {
 	TestingLibraryMatchers,
 } from '@testing-library/jest-dom/matchers';
 import { cleanup } from '@testing-library/react';
-import { getCheckoutSession } from './src/lib/api/getCheckoutSession';
 import { redirectToCheckout } from './src/lib/stripe';
 import { signOut } from 'firebase/auth';
+import { getCheckoutSession } from 'taskratchet-sdk';
 
 afterEach(() => {
 	cleanup();
