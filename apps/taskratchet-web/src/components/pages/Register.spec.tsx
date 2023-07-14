@@ -4,16 +4,12 @@ import React from 'react';
 import Register from './Register';
 import { waitFor, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { getTimezones } from '../../lib/api/getTimezones';
 import { vi, expect, it, describe } from 'vitest';
-import register from '../../lib/api/register';
-import { getCheckoutSession } from '../../lib/api/getCheckoutSession';
 import { redirectToCheckout } from '../../lib/stripe';
 import saveFeedback from '../../lib/saveFeedback';
 import { toast } from 'react-toastify';
+import { getCheckoutSession, getTimezones, register } from 'taskratchet-sdk';
 
-vi.mock('../../lib/api/getCheckoutSession');
-vi.mock('../../lib/api/register');
 vi.mock('react-toastify');
 
 async function fillForm() {
