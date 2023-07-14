@@ -4,6 +4,14 @@ import groupGoals from "../groupGoals";
 import useGoals from "../useGoals";
 import Controls from "./controls";
 import "./detail.css";
+import DOMPurify from "isomorphic-dompurify";
+import { marked } from "marked";
+
+function parseFineprint(fineprint: string): string {
+  if (!fineprint) return "[empty]";
+  const html = marked.parse(fineprint);
+  return DOMPurify.sanitize(html);
+}
 
 function sigfigs(n: number) {
   const digits = 2;
@@ -101,7 +109,10 @@ export default function Detail({
 
         <h2>Fineprint</h2>
 
-        <p>{g.fineprint || "[empty]"}</p>
+        <div
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: parseFineprint(g.fineprint) }}
+        />
       </div>
     </div>
   );

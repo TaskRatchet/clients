@@ -33,6 +33,14 @@ function getAutodata(g: Goal): boolean | string {
   return match?.[1] || !!g.autodata;
 }
 
+function parseValue(value: string): number {
+  if (value.includes(":")) {
+    const [hours, minutes] = value.split(":").map(Number);
+    return hours + minutes / 60;
+  }
+  return Number(value);
+}
+
 export default function Controls({
   g,
   refreshOnly,
@@ -67,7 +75,7 @@ export default function Controls({
   const onClick = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
     if (autodata) return r.mutate();
-    const v = Number(value);
+    const v = parseValue(value);
     if (Number.isFinite(v)) c.mutate(v);
   };
 
@@ -79,7 +87,7 @@ export default function Controls({
         <>
           <button
             class="icon-button"
-            onClick={() => setValue((s) => String(Number(s) - 1))}
+            onClick={() => setValue((s) => String(parseValue(s) - 1))}
             title={tooltip}
           >
             ➖
@@ -90,7 +98,7 @@ export default function Controls({
           />
           <button
             class="icon-button"
-            onClick={() => setValue((s) => String(Number(s) + 1))}
+            onClick={() => setValue((s) => String(parseValue(s) + 1))}
             title={tooltip}
           >
             ➕
