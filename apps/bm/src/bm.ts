@@ -2,6 +2,16 @@ import { API_KEY } from "./auth";
 
 const API_ROOT = "https://www.beeminder.com/api/v1";
 
+export type Datapoint = {
+  id: string;
+  timestamp: number;
+  daystamp: string;
+  value: number;
+  comment: string;
+  updated_at: number;
+  requestid: string;
+};
+
 export type Goal = {
   slug: string;
   losedate: number;
@@ -90,7 +100,7 @@ export type Goal = {
   datapublic: boolean;
   graphsum: string;
   rah: number;
-  last_datapoint: object;
+  last_datapoint: Datapoint;
   callback_url: object;
   tags: string[];
   recent_data: {

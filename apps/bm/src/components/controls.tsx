@@ -40,7 +40,9 @@ export default function Controls({
   g: Goal;
   refreshOnly?: boolean;
 }) {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>(
+    String(g.last_datapoint?.value || "")
+  );
   const c = useMutation(
     (v: number) => q(g.slug, () => createDatapoint(g.slug, v)),
     {
@@ -55,7 +57,7 @@ export default function Controls({
   );
   const isLoading = c.isLoading || r.isLoading || g.queued;
   const isError = c.isError || r.isError;
-  const icon = isError ? "⚠️" : autodata ? "🔃" : "➕";
+  const icon = isError ? "⚠️" : autodata ? "🔃" : "✅";
   const tooltip = isError
     ? getErrorMessage(c.error || r.error)
     : autodata
@@ -74,10 +76,26 @@ export default function Controls({
   return (
     <span class="controls">
       {!autodata && (
-        <input
-          value={value}
-          onChange={(e) => setValue(e.currentTarget.value)}
-        />
+        <>
+          <button
+            class="icon-button"
+            onClick={() => setValue((s) => String(Number(s) - 1))}
+            title={tooltip}
+          >
+            ➖
+          </button>
+          <input
+            value={value}
+            onChange={(e) => setValue(e.currentTarget.value)}
+          />
+          <button
+            class="icon-button"
+            onClick={() => setValue((s) => String(Number(s) + 1))}
+            title={tooltip}
+          >
+            ➕
+          </button>
+        </>
       )}
       <button
         class={cnx("icon-button", isLoading && "spin")}
