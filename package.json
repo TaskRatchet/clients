@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "pnpm recursive test",
+    "test": "pnpm recursive run test",
     "lint": "pnpm recursive run lint"
   },
   "keywords": [],

@@ -18,7 +18,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "pnpm run build"
   },
   "dependencies": {
     "firebase": "^10.0.0"
