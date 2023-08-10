@@ -1,7 +1,7 @@
 import { Goal } from "./bm";
 
 function isPinned(g: Goal): boolean {
-  return g.goal_type === "drinker" || g.fineprint.includes("#bmPin");
+  return g.goal_type === "drinker" || g.fineprint?.includes("#bmPin") || false;
 }
 
 export default function groupGoals(goals: Goal[]): {
