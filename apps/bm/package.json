@@ -11,7 +11,8 @@
     "lint:fix": "eslint --fix --ext .ts,tsx --ignore-path .gitignore .",
     "prettier:write": "prettier -u -w --ignore-path .gitignore \"*.{ts,tsx,css,html}\"",
     "test": "vitest",
-    "analyze": "pnpm build && vite-bundle-visualizer"
+    "analyze": "pnpm build && vite-bundle-visualizer",
+    "checkTs": "tsc --noEmit"
   },
   "dependencies": {
     "@tanstack/query-sync-storage-persister": "^4.24.4",

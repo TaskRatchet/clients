@@ -111,7 +111,9 @@ export default function Detail({
 
         <div
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: parseFineprint(g.fineprint) }}
+          dangerouslySetInnerHTML={{
+            __html: parseFineprint(g.fineprint || ""),
+          }}
         />
       </div>
     </div>

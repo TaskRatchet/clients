@@ -68,7 +68,7 @@ export type Goal = {
   roadstatuscolor: "red" | "orange" | "blue" | "green";
   lasttouch: string;
   coasting: boolean;
-  fineprint: string;
+  fineprint?: string;
   gunits: string;
   yaxis: string;
   maxflux: object;
