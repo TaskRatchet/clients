@@ -30,8 +30,8 @@ export function Goals({ goals }: { goals: Goal[] }) {
 
   return (
     <div class="goals">
-      <div class="goals__grid goals__limits">
-        {g.limits.map((g) => (
+      <div class="goals__grid goals__pinned">
+        {g.pinned.map((g) => (
           <G key={g.slug} g={g} onClick={() => setSlug(g.slug)} />
         ))}
       </div>
