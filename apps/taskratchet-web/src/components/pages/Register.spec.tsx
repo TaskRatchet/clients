@@ -21,7 +21,7 @@ async function fillForm() {
 
 	renderWithQueryProvider(<Register />);
 
-	await userEvent.type(await screen.findByLabelText('Name'), 'the_name');
+	await userEvent.type(await screen.findByLabelText(/Name/), 'the_name');
 	await userEvent.type(await screen.findByLabelText(/Email/), 'the_email');
 	await userEvent.type(
 		await screen.findByLabelText(/^Password/),
@@ -57,7 +57,7 @@ describe('registration page', () => {
 	it('uses Input for name field', async () => {
 		renderWithQueryProvider(<Register />);
 
-		await screen.findByLabelText('Name');
+		await screen.findByLabelText(/Name/);
 	});
 
 	it('uses Input for email field', async () => {
@@ -204,6 +204,32 @@ describe('registration page', () => {
 		await userEvent.click(await screen.findByText('Add payment method'));
 
 		expect(await screen.findByText(/is required/)).toBeInTheDocument();
+
+		expect(toast).not.toBeCalled();
+	});
+
+	it('requires name', async () => {
+		await fillForm();
+
+		await userEvent.clear(await screen.findByLabelText(/Name/));
+
+		await userEvent.click(await screen.findByText('Add payment method'));
+
+		await screen.findByText('Name is required');
+	});
+
+	it('does not use toast for registration errors', async () => {
+		await fillForm();
+
+		vi.mocked(register).mockResolvedValue({
+			ok: false,
+			status: 400,
+			text: () => Promise.resolve('the_error'),
+		} as any);
+
+		await userEvent.click(await screen.findByText('Add payment method'));
+
+		await screen.findByText(/the_error/);
 
 		expect(toast).not.toBeCalled();
 	});
