@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
-import { deleteDatapoint } from "../bm";
+import { createDatapoint, deleteDatapoint } from "../bm";
 import cnx from "../cnx";
+import "./datapointRow.css";
 
 export default function DatapointRow({
   goal,
@@ -15,6 +16,7 @@ export default function DatapointRow({
   };
 }) {
   const del = useMutation(() => deleteDatapoint(goal, point.id));
+  const copy = useMutation(() => createDatapoint(goal, point.value));
 
   return (
     <tr key={point.id} data-id={point.id}>
@@ -32,6 +34,13 @@ export default function DatapointRow({
           }}
         >
           🗑️
+        </button>
+        <button
+          type="button"
+          class={cnx("icon-button", copy.isLoading && "spin")}
+          onClick={() => copy.mutate()}
+        >
+          ➕
         </button>
       </td>
     </tr>
