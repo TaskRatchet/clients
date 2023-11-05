@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { createDatapoint, deleteDatapoint } from "../bm";
+import { createDatapoint, deleteDatapoint } from "../services/beeminder";
 import cnx from "../cnx";
 import "./datapointRow.css";
 

@@ -1,4 +1,4 @@
-import { Goal } from "./bm";
+import { Goal } from "./services/beeminder";
 
 function isPinned(g: Goal): boolean {
   return g.goal_type === "drinker" || g.fineprint?.includes("#bmPin") || false;

@@ -1,4 +1,4 @@
-import { Goal } from "../bm";
+import { Goal } from "../services/beeminder";
 import "./goal.css";
 import Controls from "./controls";
 import Countdown from "./countdown";

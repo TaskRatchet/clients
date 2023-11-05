@@ -1,4 +1,4 @@
-import { API_KEY } from "./auth";
+import { API_KEY } from "../../auth";
 
 const API_ROOT = "https://www.beeminder.com/api/v1";
 
@@ -118,6 +118,7 @@ export type Goal = {
     value: number;
   }[];
   dueby: object;
+  autoratchet: number | null;
 };
 
 export async function getGoals() {

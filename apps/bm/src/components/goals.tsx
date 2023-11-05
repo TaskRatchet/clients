@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "preact/hooks";
-import { Goal } from "../bm";
+import { Goal } from "../services/beeminder";
 import groupGoals from "../groupGoals";
 import Detail from "./detail";
 import G from "./goal";

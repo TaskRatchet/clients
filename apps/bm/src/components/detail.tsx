@@ -1,5 +1,5 @@
 import { USERNAME } from "../auth";
-import { Goal } from "../bm";
+import { Goal } from "../services/beeminder";
 import groupGoals from "../groupGoals";
 import useGoals from "../useGoals";
 import Controls from "./controls";
@@ -7,6 +7,7 @@ import DatapointRow from "./datapointRow";
 import "./detail.css";
 import DOMPurify from "isomorphic-dompurify";
 import { marked } from "marked";
+import convertDeadlineToTime from "../services/beeminder/convertDeadlineToTime";
 
 function parseFineprint(fineprint: string): string {
   if (!fineprint) return "[empty]";
@@ -37,6 +38,8 @@ export default function Detail({
   const i = goals.findIndex((g2) => g2.slug === g.slug);
   const p = i === undefined ? "?" : i + 1;
   const r = sigfigs(g.mathishard[2]);
+
+  console.log({ g });
 
   return (
     <div
@@ -85,6 +88,9 @@ export default function Detail({
           <li>
             {r} {g.gunits} / {g.runits}
           </li>
+          <li>{g.aggday}</li>
+          <li>deadline: {convertDeadlineToTime(g.deadline)}</li>
+          {g.autoratchet && <li>autoratchet: {g.autoratchet}d</li>}
         </ul>
 
         <h2>Recent Data</h2>

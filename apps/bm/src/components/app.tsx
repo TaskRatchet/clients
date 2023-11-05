@@ -1,5 +1,5 @@
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Goal } from "../bm";
+import { Goal } from "../services/beeminder";
 import "./app.css";
 import { Goals } from "./goals";
 import { useState } from "preact/hooks";
@@ -28,12 +28,14 @@ function _App() {
   });
 
   return (
-    <div class='app__base'>
+    <div class="app__base">
       <div>
         <Header search={filter} setSearch={setFilter} />
         <Tags onChange={(t) => setTag(t)} />
       </div>
-      <div class='app__content'><Goals goals={filtered} /></div>
+      <div class="app__content">
+        <Goals goals={filtered} />
+      </div>
       <Footer />
     </div>
   );

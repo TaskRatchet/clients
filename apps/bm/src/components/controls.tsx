@@ -1,5 +1,5 @@
 import "./goal.css";
-import { createDatapoint, refreshGraph, Goal } from "../bm";
+import { createDatapoint, refreshGraph, Goal } from "../services/beeminder";
 import { useMutation } from "@tanstack/react-query";
 import queryClient from "../queryClient";
 import cnx from "../cnx";
