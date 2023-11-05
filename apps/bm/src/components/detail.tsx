@@ -3,6 +3,7 @@ import { Goal } from "../bm";
 import groupGoals from "../groupGoals";
 import useGoals from "../useGoals";
 import Controls from "./controls";
+import DatapointRow from "./datapointRow";
 import "./detail.css";
 import DOMPurify from "isomorphic-dompurify";
 import { marked } from "marked";
@@ -94,16 +95,21 @@ export default function Detail({
               <th>Date</th>
               <th>Comment</th>
               <th>Value</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {g.recent_data.map((d) => (
-              <tr key={d.id}>
-                <td>{d.daystamp}</td>
-                <td>{d.comment}</td>
-                <td>{d.value}</td>
-              </tr>
-            ))}
+            {g.recent_data.map((point) =>
+              DatapointRow({
+                goal: g.slug,
+                point: {
+                  id: point.id.$oid,
+                  daystamp: point.daystamp,
+                  comment: point.comment,
+                  value: point.value,
+                },
+              })
+            )}
           </tbody>
         </table>
 

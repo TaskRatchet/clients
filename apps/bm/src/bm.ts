@@ -149,6 +149,13 @@ export async function createDatapoint(goal: string, value: number) {
   });
 }
 
+export async function deleteDatapoint(goal: string, id: string) {
+  return api({
+    route: `/users/me/goals/${goal}/datapoints/${id}.json`,
+    method: "delete",
+  });
+}
+
 async function api({
   route,
   method = "get",
