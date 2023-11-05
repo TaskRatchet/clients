@@ -65,3 +65,11 @@
     border-radius: 0.25rem;
     background-color: var(--border-color);
 }
+
+.detail table {
+    max-width: 100%;
+}
+
+.detail table td {
+    word-break: break-all;
+}
