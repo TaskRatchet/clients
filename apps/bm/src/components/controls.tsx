@@ -82,37 +82,17 @@ export default function Controls({
     r.mutate();
   };
 
-  const increment = (step: number) => {
-    setValue((s) => {
-      const v = Math.round(parseValue(s) + step);
-      return String(v);
-    });
-  };
-
   if (refreshOnly && !autodata) return null;
 
   return (
     <span class="controls">
       {!refreshOnly && (
         <>
-          <button
-            class="icon-button"
-            onClick={() => increment(-1)}
-            title={tooltip}
-          >
-            ➖
-          </button>
           <input
+            type="number"
             value={value}
             onChange={(e) => setValue(e.currentTarget.value)}
           />
-          <button
-            class="icon-button"
-            onClick={() => increment(1)}
-            title={tooltip}
-          >
-            ➕
-          </button>
           <button
             class={cnx("icon-button", isLoading && "spin")}
             onClick={submit}
