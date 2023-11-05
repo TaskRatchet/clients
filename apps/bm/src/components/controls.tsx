@@ -82,6 +82,13 @@ export default function Controls({
     r.mutate();
   };
 
+  const increment = (step: number) => {
+    setValue((s) => {
+      const v = Math.round(parseValue(s) + step);
+      return String(v);
+    });
+  };
+
   if (refreshOnly && !autodata) return null;
 
   return (
@@ -90,7 +97,7 @@ export default function Controls({
         <>
           <button
             class="icon-button"
-            onClick={() => setValue((s) => String(parseValue(s) - 1))}
+            onClick={() => increment(-1)}
             title={tooltip}
           >
             ➖
@@ -101,7 +108,7 @@ export default function Controls({
           />
           <button
             class="icon-button"
-            onClick={() => setValue((s) => String(parseValue(s) + 1))}
+            onClick={() => increment(1)}
             title={tooltip}
           >
             ➕
