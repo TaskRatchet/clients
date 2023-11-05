@@ -92,6 +92,9 @@ export default function Controls({
             type="number"
             value={value}
             onChange={(e) => setValue(e.currentTarget.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") submit(e);
+            }}
           />
           <button
             class={cnx("icon-button", isLoading && "spin")}
