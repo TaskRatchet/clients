@@ -65,25 +65,28 @@ export default function Controls({
   );
   const isLoading = c.isLoading || r.isLoading || g.queued;
   const isError = c.isError || r.isError;
-  const icon = isError ? "⚠️" : autodata ? "🔃" : "✅";
   const tooltip = isError
     ? getErrorMessage(c.error || r.error)
     : autodata
     ? "Refresh"
     : "Add datapoint";
 
-  const onClick = (e: { stopPropagation: () => void }) => {
+  const submit = (e: { stopPropagation: () => void }) => {
     e.stopPropagation();
-    if (autodata) return r.mutate();
     const v = parseValue(value);
     if (Number.isFinite(v)) c.mutate(v);
+  };
+
+  const refresh = (e: { stopPropagation: () => void }) => {
+    e.stopPropagation();
+    r.mutate();
   };
 
   if (refreshOnly && !autodata) return null;
 
   return (
     <span class="controls">
-      {!autodata && (
+      {!refreshOnly && (
         <>
           <button
             class="icon-button"
@@ -103,15 +106,24 @@ export default function Controls({
           >
             ➕
           </button>
+          <button
+            class={cnx("icon-button", isLoading && "spin")}
+            onClick={submit}
+            title={tooltip}
+          >
+            ✅
+          </button>
         </>
       )}
-      <button
-        class={cnx("icon-button", isLoading && "spin")}
-        onClick={onClick}
-        title={tooltip}
-      >
-        {icon}
-      </button>
+      {autodata && (
+        <button
+          class={cnx("icon-button", isLoading && "spin")}
+          onClick={refresh}
+          title={tooltip}
+        >
+          🔃
+        </button>
+      )}
     </span>
   );
 }
