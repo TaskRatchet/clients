@@ -20,10 +20,11 @@ import {
 import {
   Colors,
   DebugInstructions,
-  Header,
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+import createId from './components/createId';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -82,11 +83,42 @@ function App(): JSX.Element {
             </Text>
           </Section>
           <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+            <Text>Get the random id {createId()}</Text>
           </Section>
           <Section title="See Your Changes">
-            <ReloadInstructions />
+            <Text>
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+              {'\n'}
+              {createId()}
+            </Text>
           </Section>
           <Section title="Debug">
             <DebugInstructions />
