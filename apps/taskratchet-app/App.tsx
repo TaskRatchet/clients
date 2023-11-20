@@ -20,11 +20,10 @@ import {
 import {
   Colors,
   DebugInstructions,
+  Header,
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
-import createId from './components/createId';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -72,53 +71,21 @@ function App(): JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        {/* <Header>Welcome to Taskratchet</Header> */}
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Custom Title">
-            <Text style={{fontSize: 40, color: 'green'}}>
+          <Section title="">
+            <Text style={{textAlign: 'center', fontSize: 25, color: 'green'}}>
               Welcome to Taskratchet
             </Text>
           </Section>
           <Section title="Step One">
-            <Text>Get the random id {createId()}</Text>
+            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
+            screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
-            <Text>
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-              {'\n'}
-              {createId()}
-            </Text>
+            <ReloadInstructions />
           </Section>
           <Section title="Debug">
             <DebugInstructions />
