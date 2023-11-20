@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios --simulator='iPhone 15 Pro Max'",
+    "ios": "react-native run-ios --simulator='iPhone 15 Pro'",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "doctor": "react-native doctor"
   },
   "dependencies": {
+    "cocoapods": "^0.0.0",
+    "pod": "^0.9.0",
     "react": "18.2.0",
     "react-native": "0.72.6",
     "react-native-gesture-handler": "^2.13.4"
