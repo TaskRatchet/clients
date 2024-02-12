@@ -20,8 +20,8 @@ export function Goals({ goals }: { goals: Goal[] }) {
 
   useEffect(() => {
     const fn = (e: { key: string }) => {
-      if (e.key === "ArrowLeft") return goPrev?.();
-      if (e.key === "ArrowRight") return goNext?.();
+      if (e.key === "a") return goPrev?.();
+      if (e.key === "d") return goNext?.();
       if (e.key === "Escape") return close();
     };
     document.addEventListener("keydown", fn);

@@ -48,9 +48,7 @@ export default function Controls({
   g: Goal;
   refreshOnly?: boolean;
 }) {
-  const [value, setValue] = useState<string>(
-    String(g.last_datapoint?.value || "")
-  );
+  const [value, setValue] = useState<string>("");
   const c = useMutation(
     (v: number) => q(g.slug, () => createDatapoint(g.slug, v)),
     {
