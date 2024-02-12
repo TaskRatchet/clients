@@ -36,7 +36,7 @@ also email me, since I keep a separate record of missing features and the users 
 
 ### Is TaskRatchet free?
 
-Yes! TaskRatchet is free to use forever. You will only be charged if you don't complete a task you've added by the
+Yes! TaskRatchet is entirely free to use. You will only be charged if you don't complete a task you've added by the
 deadline you chose.
 
 ### Why does TaskRatchet need my payment details?
