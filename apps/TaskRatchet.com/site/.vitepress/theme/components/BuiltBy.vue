@@ -6,13 +6,14 @@ defineProps<{
 
 <template>
     <article class="BuiltBy">
+        <h1 class="main-title">Team</h1>
         <div class="container">
             <div class="bio">
                 <div class="img">
                     <img src="/Nathan-Arthur.jpg" alt="Nathan Arthur" />
                 </div>
                 <div class="content">
-                    <h2 class="title">Built by Narthur</h2>
+                    <h2 class="title">Founded by Narthur</h2>
                     <p class="details">
                         TaskRatchet was built by <a href="https://nathanarthur.com">Nathan Arthur</a>, a web developer
                         active in <a href="https://forum.beeminder.com/u/narthur/summary">the Beeminder community</a>.
@@ -50,6 +51,22 @@ defineProps<{
                     </p>
                 </div>
             </div>
+            <div class="bio">
+                <div class="img">
+                    <img src="/Luke-Arthur.jpeg" alt="Luke Arthur" />
+                </div>
+                <div class="content">
+                    <h2 class="title">Developed by Luke</h2>
+                    <p class="details">
+                        <a href="https://github.com/lcflight">Luke Arthur</a> joined his brother to work on TaskRatchet in
+                        order to create the first version of TaskRatchet's mobile apps (coming soon!). His love of learning
+                        and engineering mindset have been a huge help in pushing TaskRatchet forward. When he's not
+                        slinging code, Luke
+                        enjoys flying helicopters, scaling climing walls, playing the piano and violin, and working on film
+                        projects.
+                    </p>
+                </div>
+            </div>
         </div>
     </article>
 </template>
@@ -58,7 +75,6 @@ defineProps<{
 .BuiltBy {
     position: relative;
     padding: 0 24px;
-    display: flex;
 }
 
 @media (min-width: 640px) {
@@ -73,18 +89,22 @@ defineProps<{
     }
 }
 
+.BuiltBy .main-title {
+    letter-spacing: -0.02em;
+    line-height: 40px;
+    font-size: 28px;
+    position: relative;
+    font-weight: 600;
+    outline: none;
+    margin: 64px 0 0;
+}
+
 .container {
     max-width: 1152px;
     margin: 16px auto;
     display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-@media (min-width: 960px) {
-    .container {
-        flex-direction: row;
-    }
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .bio {
@@ -92,29 +112,23 @@ defineProps<{
     border: 1px solid var(--vp-c-bg-soft);
     background-color: var(--vp-c-bg-soft);
     border-radius: 12px;
-    display: flex;
-    flex-direction: row;
-    margin: 8px 0;
-    flex: 0 0 calc(50%);
-}
-
-@media (min-width: 960px) {
-    .bio {
-        flex: 0 0 calc(50% - 8px);
-    }
+    flex: 1 0 0;
+    min-width: 300px;
 }
 
 .img {
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     overflow: hidden;
     background-color: var(--vp-c-bg-soft);
-    flex: 0 0 100px;
-    margin-right: 24px;
+    margin-bottom: 16px;
 }
 
 .img img {
     border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .title {
