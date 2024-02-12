@@ -11,11 +11,13 @@ import Footer from "./footer";
 import Header from "./header";
 import Center from "./center";
 import Tags from "./tags";
+import useDarkMode from "../useDarkMode";
 
 function _App() {
   const [filter, setFilter] = useState("");
   const [tag, setTag] = useState("");
   const { data } = useGoals();
+  const isDark = useDarkMode();
 
   if (!API_KEY) return <Login />;
   if (data === undefined) return <Center>Loading...</Center>;
@@ -28,7 +30,7 @@ function _App() {
   });
 
   return (
-    <div class="app__base">
+    <div class={`app__base ${isDark ? "app__dark" : ""}`}>
       <div>
         <Header search={filter} setSearch={setFilter} />
         <Tags onChange={(t) => setTag(t)} />
