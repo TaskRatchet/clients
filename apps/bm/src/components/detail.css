@@ -5,6 +5,9 @@
 .detail img {
     width: 100%;
     height: auto;
+    background-color: white;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .detail__disabled {
@@ -38,6 +41,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: black;
 }
 
 .detail__title {
@@ -56,6 +60,7 @@
 .detail_info .pills {
     margin: -0.25rem;
     padding: 0;
+    color: black;
 }
 
 .detail_info .pills li {
