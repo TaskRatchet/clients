@@ -37,7 +37,7 @@ export default function DatapointRow({
         </button>
         <button
           type="button"
-          class={cnx("icon-button", copy.isLoading && "spin")}
+          class={cnx("icon-button", "invert", copy.isLoading && "spin")}
           onClick={() => copy.mutate()}
         >
           ➕

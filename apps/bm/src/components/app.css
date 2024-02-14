@@ -30,6 +30,10 @@ body {
   color: var(--text);
 }
 
+.app__dark .invert {
+  filter: invert(1);
+}
+
 .app__dark a {
   color: var(--text);
 }
