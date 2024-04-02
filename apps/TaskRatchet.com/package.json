@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vitepress dev site",
@@ -13,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.4",
-    "vue": "^3.2.37"
+    "vitepress": "1.0.2",
+    "vue": "^3.4.21"
   },
   "private": true
 }

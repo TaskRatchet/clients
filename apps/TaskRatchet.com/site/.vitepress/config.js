@@ -46,5 +46,9 @@ export default defineConfig({
         },
       ],
     },
+    footer: {
+      message:
+        "Built with ❤️ by <a href='https://pinepeakdigital.com/'>Pine Peak Digital</a>.",
+    },
   },
 });

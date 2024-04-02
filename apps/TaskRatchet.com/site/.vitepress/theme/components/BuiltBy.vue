@@ -16,12 +16,16 @@ defineProps<{
                     <div class="content">
                         <h2 class="title">Founded by Narthur</h2>
                         <p class="details">
-                            TaskRatchet was built by <a href="https://nathanarthur.com">Nathan Arthur</a>, a web developer
-                            active in <a href="https://forum.beeminder.com/u/narthur/summary">the Beeminder community</a>.
-                            Nathan has been <a href="https://www.beeminder.com/narthur">using Beeminder since 2018</a>. With
+                            TaskRatchet was built by <a href="https://nathanarthur.com">Nathan Arthur</a>, a web
+                            developer
+                            active in <a href="https://forum.beeminder.com/u/narthur/summary">the Beeminder
+                                community</a>.
+                            Nathan has been <a href="https://www.beeminder.com/narthur">using Beeminder since 2018</a>.
+                            With
                             the
                             encouragement of Beeminder cofounder Danny and the Beeminder community, Nathan launched
-                            TaskRatchet <a href="https://blog.beeminder.com/taskratchet/">in 2020</a> to make it easier to
+                            TaskRatchet <a href="https://blog.beeminder.com/taskratchet/">in 2020</a> to make it easier
+                            to
                             make
                             monetary commitments on one-off tasks. Since then he's been making <a
                                 href="https://forum.beeminder.com/t/taskratchet-development-updates/5037">steady
@@ -42,7 +46,8 @@ defineProps<{
                             raises
                             rabbits. Also
                             they are consummately <a href="https://twitter.com/shanaqui/status/1108509105650585600"
-                                title="Nicky sewing">crafty</a>, beguilingly British, and eat university degrees like candy
+                                title="Nicky sewing">crafty</a>, beguilingly British, and eat university degrees like
+                            candy
                             (3
                             and counting!).
                             Here at TaskRatchet Nicky keeps the inbox squeaky-clean and has single-handedly improved the
@@ -60,13 +65,15 @@ defineProps<{
                     <div class="content">
                         <h2 class="title">Developed by Luke</h2>
                         <p class="details">
-                            <a href="https://github.com/lcflight">Luke Arthur</a> joined his brother to work on TaskRatchet
+                            <a href="https://github.com/lcflight">Luke Arthur</a> joined his brother to work on
+                            TaskRatchet
                             in
                             order to create the first version of TaskRatchet's mobile apps (coming soon!). His love of
                             learning
                             and engineering mindset have been a huge help in pushing TaskRatchet forward. When he's not
                             slinging code, Luke
-                            enjoys flying helicopters, scaling climing walls, playing the piano and violin, and working on
+                            enjoys flying helicopters, scaling climing walls, playing the piano and violin, and working
+                            on
                             film
                             projects.
                         </p>
@@ -80,19 +87,6 @@ defineProps<{
 <style scoped>
 .BuiltBy {
     position: relative;
-    padding: 0 24px;
-}
-
-@media (min-width: 640px) {
-    .BuiltBy {
-        padding: 0 48px;
-    }
-}
-
-@media (min-width: 960px) {
-    .BuiltBy {
-        padding: 0 64px;
-    }
 }
 
 .BuiltBy .main-title {
@@ -130,11 +124,11 @@ defineProps<{
     height: 100px;
     overflow: hidden;
     background-color: var(--vp-c-bg-soft);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .img img {
-    border-radius: 12px;
+    border-radius: 6px;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -144,10 +138,14 @@ defineProps<{
     line-height: 24px;
     font-size: 16px;
     font-weight: 600;
+    margin: 0;
+    border: none;
+    padding: 0;
 }
 
 .details {
     padding-top: 8px;
+    margin: 0;
     line-height: 24px;
     font-size: 14px;
     font-weight: 500;
