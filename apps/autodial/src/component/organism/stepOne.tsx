@@ -7,16 +7,15 @@ import useGoals from "../../lib/useGoals";
 import useParams from "../../lib/useParams";
 import useIsAuthenticated from "../../lib/useIsAuthenticated";
 
-const { REACT_APP_APP_URL = "", REACT_APP_BM_CLIENT_ID = "" } = process.env;
-const redirectUri = encodeURIComponent(REACT_APP_APP_URL);
-const enableUrl = `https://www.beeminder.com/apps/authorize?client_id=${REACT_APP_BM_CLIENT_ID}&redirect_uri=${redirectUri}&response_type=token`;
-
 export default function StepOne(): JSX.Element {
   const { user, token, disable } = useParams();
   const update = useUpdate();
   const remove = useRemove();
   const goals = useGoals();
   const isAuthenticated = useIsAuthenticated();
+  const { REACT_APP_APP_URL = "", REACT_APP_BM_CLIENT_ID = "" } = process.env;
+  const redirectUri = encodeURIComponent(REACT_APP_APP_URL);
+  const enableUrl = `https://www.beeminder.com/apps/authorize?client_id=${REACT_APP_BM_CLIENT_ID}&redirect_uri=${redirectUri}&response_type=token`;
   const disableUrl = `/?access_token=${token}&username=${user}&disable=true`;
 
   useEffect(() => {
