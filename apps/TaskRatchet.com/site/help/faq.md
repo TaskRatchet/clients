@@ -59,7 +59,7 @@ are required to add a payment method during the registration process.
 
 ### Does TaskRatchet support PayPal?
 
-No, but email me at support@taskratchet.com anyway to let me know you're missing it! I'll probably also ask you where
+No, but send an email to support@taskratchet.com anyway to let us know you wish we did! Also include where
 you're located and if there are any other payment methods that might work for you.
 
 ## Account Management
