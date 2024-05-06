@@ -2,6 +2,8 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   title: "TaskRatchet",
+  description:
+    "TaskRatchet is a todo list that charges you real money if you don't complete your tasks on time. Define your task, set your deadline, and choose your stakes. TaskRatchet will make sure you follow through.",
   themeConfig: {
     logo: "/logo.png",
     nav: [
