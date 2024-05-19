@@ -25,12 +25,12 @@ use cases than one alone could support.
 
 ### Why doesn't TaskRatchet have \[feature\]?
 
-TaskRatchet is built and maintained by a single developer, so I may plan to have certain features that I just haven't
-had the time to build yet. Or, maybe I haven't thought of the feature yet! Email me at support@taskratchet.com with any
-ideas, suggestions, or feedback. I love hearing your ideas!
+TaskRatchet is built and maintained by two part-time developers, so we may plan to have certain features that we just haven't
+had the time to build yet. Or, maybe we haven't thought of the feature yet! Email us at support@taskratchet.com with any
+ideas, suggestions, or feedback. We love hearing your ideas!
 
-You can also suggest and vote for ideas [here](https://taskratchet.consider.it/), though I would recommend that you
-also email me, since I keep a separate record of missing features and the users who want them.
+You can also suggest and vote for ideas [here](https://taskratchet.consider.it/), though we would recommend that you
+also email us, since we keep a separate record of missing features and the users who want them.
 
 ## Payments
 
