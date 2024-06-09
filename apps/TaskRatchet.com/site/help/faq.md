@@ -48,8 +48,8 @@ the deadlines you've set.
 ### When does TaskRatchet charge me?
 
 Soon after you miss a deadline, TaskRatchet will email you letting you know you're about to be charged, and a
-charge will appear in your bank account. You can reply to this email to pause the charge and let me know that the charge
-isn't legit. Once I've canceled a charge, it will disappear from your bank account.
+charge will appear in your bank account. You can reply to this email to pause the charge and let us know that the charge
+isn't legit. Once we've canceled the charge, it will disappear from your bank account.
 
 ### Can I try TaskRatchet out without adding my payment details?
 
